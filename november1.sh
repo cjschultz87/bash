@@ -1,6 +1,6 @@
 echo "randomizing common ports.";
 
-romeo=$(/home/john/cc/romeoarray 1 1023 " ");
+romeo=$(romeoarray 1 1023 " ");
 
 alpha=($romeo);
 
