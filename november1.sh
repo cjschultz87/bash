@@ -23,7 +23,11 @@ sierra="$(($RANDOM%256 * 256**3 + $RANDOM%256 * 256**2 + $RANDOM%256 * 256**1 + 
 
 ack="$(($RANDOM%256 * 256**3 + $RANDOM%256 * 256**2 + $RANDOM%256 * 256**1 + $RANDOM%256))";
 
-sudo python3 ./python/foxcom1.1.py p 80 ${alpha[$index]} type tcp 00000010 172 sa $sierra $ack 10.0.2.7 10.0.2.8 enp0s3 &>/dev/null;
+sudo python3 ./python/foxcom1.1.py p 80 ${alpha[$index]} type tcp 00000010 1024 sa $sierra 0 $addr $tango enp0s3 &>/dev/null;
+
+sleep "0.$(($RANDOM % 200 + 200))";
+
+sudo python3 ./python/foxcom1.1.py p 80 ${alpha[$index]} type tcp 00000100 1024 sa $(($sierra + 1)) 0 $addr $tango enp0s3 &>/dev/null;
 
 #sleep "$(($RANDOM % 15))s";
 
