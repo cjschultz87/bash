@@ -21,7 +21,7 @@ echo "$index/$aL: $tango port ${alpha[$index]}";
 
 sierra="$(($RANDOM%256 * 256**3 + $RANDOM%256 * 256**2 + $RANDOM%256 * 256**1 + $RANDOM%256))";
 
-ack="$(($RANDOM%256 * 256**3 + $RANDOM%256 * 256**2 + $RANDOM%256 * 256**1 + $RANDOM%256))";
+#ack="$(($RANDOM%256 * 256**3 + $RANDOM%256 * 256**2 + $RANDOM%256 * 256**1 + $RANDOM%256))";
 
 sudo python3 ./python/foxcom1.1.py p 80 ${alpha[$index]} type tcp 00000010 1024 sa $sierra 0 $addr $tango enp0s3 &>/dev/null;
 
