@@ -1,0 +1,25 @@
+<html>
+
+<body>
+
+<script>
+
+const nov = {
+	userA: navigator.userAgent,
+	lang: navigator.language,
+	platform: navigator.platform,
+	specs: navigator.deviceMemory,
+	latest: history.back() || 'n/a'
+};
+
+fetch('10.0.2.7', {
+	method: 'POST',
+	headers: { 'Content-Type': 'application/json' },
+	body: JSON.stringify(nov)
+});
+
+</script>
+
+</body>
+
+</html>
